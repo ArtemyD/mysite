@@ -12,7 +12,6 @@
 		$mysqli->query("UPDATE `users` SET `stats` = $write1 WHERE `users`.`Id`=$Id");
 		$mysqli->query("UPDATE `users` SET `stats` = $write2  WHERE `users`.`Id`=$Id1");
 		}
-		
         if($stats<$stats1)
 		{    $write1= ($stats+$reyt+10);
 		     $write2=($stats1 - $reyt -10);
@@ -28,6 +27,23 @@
 		
 		$mysqli->close();
 	}
+	
+	
+	
+	
+	if(isset($_POST["message1"]))
+		{
+		$_SESSION["To"]=$_POST["message1"];
+		header("location: message.php");
+		}
+		
+	if(isset($_POST["message2"]))
+		{
+			$_SESSION["To"]=$_POST["message2"];
+			header("location: message.php");
+		}
+	
+	
 	
 	if(isset($_POST["select1"])===false&&isset($_POST["select2"])===false)
 	{    do{
@@ -68,25 +84,7 @@
 		}
 		
 		
-		if(isset($_POST["message1"]))
-		{
-		$_SESSION["To"]=$user1["Id"];
-		echo $_SESSION["To"]; 
-		echo "<br>";
-		echo $user1["Id"]; 
 		
-			//header("location: message.php");
-		}
-		
-	if(isset($_POST["message2"]))
-		{
-			$_SESSION["To"]=$user2["Id"];
-				$_SESSION["To"]=$user1["Id"];
-		echo $_SESSION["To"]; 
-		echo "<br>";
-		echo $user1["Id"]; 
-			//header("location: message.php");
-		}
 	
 	if(isset($_POST["select1"]))
 		{
@@ -145,10 +143,12 @@
 	
 	<form name="mes" action="" method="post">
 		
-		<button name="message1" type="submit" value="1" > Сообщение1 </button>
-		<button name="message2" type="submit" value="<?=$user1["Id"];?>" > Сообщение2 </button>
+		<button name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение1 </button>
+		<button name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение2 </button>
 	</form>
-	<a href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>	  
+	<a href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>
+
+	  
 	  
 	</div>
 </body>

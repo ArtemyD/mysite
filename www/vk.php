@@ -34,7 +34,7 @@ $_SESSION["bool"]=1;
 $_SESSION['lastname']=$lastname;
 //token complete
 
-echo $_SESSION["bool"];
+//echo $_SESSION["bool"];
 
 $user=0;
 $user=$mysqli->query("SELECT * FROM users WHERE idvk=$idvk1");
@@ -43,7 +43,7 @@ if($user===0)
 	$mysqli->query("INSERT INTO `users` (`Id`, `firstname`, `lastname`, `likes`, `credits`, `Photo`, `institute`, `course`, `idvk`) VALUES (NULL, '$name','$lastname', '0', '0', '$photo', 'dd', '1', '$idvk1')");
 	$result=$mysqli->query("SELECT * FROM users WHERE idvk=$idvk1");
 		$user1=$result->fetch_assoc();
-		$_SESSION["Id"]=$user1[Id];
+		$_SESSION["Id"]=$user1["Id"];
 		
 
 }
@@ -51,7 +51,14 @@ else
 {
 	$mysqli->query("UPDATE `users` SET `Photo` = $photo WHERE `users`.`idvk`=$idvk1");
 	$user1=$user->fetch_assoc();
-	$_SESSION["Id"]=$user1[Id];
+	
+	echo "user ";
+	echo $user1["Id"];
+	echo "<br/>";
+	$_SESSION["Id"]=$user1["Id"];
+	
+	echo "session ";
+	echo $_SESSION["Id"];
 }
 
 

@@ -6,12 +6,14 @@
  
 	<p>Диалог </p>
 	
-	session_start();
 <form action="send_mess.php" method="post" enctype="multipart/form-data">
 	Адресат: <br />
 	<?
 	session_start();
 	echo $_SESSION["To"];
+	
+	echo $message1['value']; 
+		echo $message1; 
 	?>
 	
 	
