@@ -1,0 +1,88 @@
+*{  
+	margin: 0px;
+	padding: 0px;
+	
+	
+}
+html
+{
+background-color: #white;	
+}
+header 
+{   
+	border-bottom: 4px ridge #02b3ff;
+
+	
+	background: #aad3ff;
+	height:70px;
+	width:100%;
+	margin:0px;
+	float:left;
+	
+	 height:auto;
+	
+}
+#p
+{
+	margin-top:100px;
+}
+#logo
+{   
+ margin-top:-2%;
+	 margin-left:60%;
+	 float:left;
+	 height:auto;
+	
+}
+#logoN
+{  
+     margin-top:-7%;
+	 margin-left:30%;
+	 float:left;
+	 width:30%;
+	 height:15%;
+	  
+	  
+}
+#text1
+{   margin-left:40%;
+	margin-top:5%;
+	float: left;
+}
+#user1text
+{   margin-top:-2%;
+	margin-left:40%; 
+	float: left;
+}
+#user2text
+{   margin-top: -2%;
+	margin-left:60%; 
+	float: left;
+}
+#photo1
+{     
+   height:390;
+   width:300;   
+   padding-left: 0px;
+   padding-bottom: 15px;
+    background-color: white;
+	margin-left:25%;
+	float: left;
+	 margin-top:3%;
+	border: 2px outset silver;
+}
+#photo2
+{    height:390;
+   width:300;   
+   padding-left: 0px;
+   padding-bottom: 15px;
+	 background-color: white;
+	 border: 2px outset silver;
+    margin-top:3%;
+	
+	margin-left:5%;
+	
+	float: left;
+}
+
+
