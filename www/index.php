@@ -148,9 +148,7 @@
 		<button name="message1" type="submit" value="1" > Сообщение1 </button>
 		<button name="message2" type="submit" value="<?=$user1["Id"];?>" > Сообщение2 </button>
 	</form>
-	<a href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>
-
-	  
+	<a href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>	  
 	  
 	</div>
 </body>
