@@ -11,21 +11,25 @@
 <body>
  
 	<p>Диалог </p>
-	
-<form action="send_mess.php" method="post" enctype="multipart/form-data">
-	Адресат: <br />
-	<?
-	session_start();
-	echo $_SESSION["To"];
-	
-	echo $message1['value']; 
-		echo $message1; 
-	?>
-	
-	
-	Текст сообщения: <br /><textarea name="message"></textarea><br />
-	<input type="submit"  value="Отправить" />
-</form>
+	<div>
+	<form action="send_mess.php" method="post" enctype="multipart/form-data">
+		
+		<div>
+			Адресат: <br />
+			<?
+			session_start();
+			echo $_SESSION["To"];
+			
+			echo $message1['value']; 
+				echo $message1; 
+			?>
+		</div>
+		<div>
+			Текст сообщения: <br /><textarea class="form-control" name="message"></textarea><br />
+			<button class="btn btn-dark" type="submit"  value="Отправить">Отправить</button>
+		</div>
+	</form>
+</div>
 		 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
