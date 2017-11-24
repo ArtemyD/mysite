@@ -36,9 +36,11 @@ $_SESSION['lastname']=$lastname;
 
 //echo $_SESSION["bool"];
 
-$user=0;
-$user=$mysqli->query("SELECT * FROM users WHERE idvk=$idvk1");
-if($user===0)
+$result=0;
+$result=$mysqli->query("SELECT * FROM users WHERE idvk=$idvk1");
+$user1=$result->fetch_assoc();
+print_r($result);
+if($user1["Id"]==0)
 {
 	$mysqli->query("INSERT INTO `users` (`Id`, `firstname`, `lastname`, `likes`, `credits`, `Photo`, `institute`, `course`, `idvk`) VALUES (NULL, '$name','$lastname', '0', '0', '$photo', 'dd', '1', '$idvk1')");
 	$result=$mysqli->query("SELECT * FROM users WHERE idvk=$idvk1");
@@ -50,21 +52,14 @@ if($user===0)
 else 
 {
 	$mysqli->query("UPDATE `users` SET `Photo` = $photo WHERE `users`.`idvk`=$idvk1");
-	$user1=$user->fetch_assoc();
 	
-	echo "user ";
-	echo $user1["Id"];
-	echo "<br/>";
 	$_SESSION["Id"]=$user1["Id"];
-	
-	echo "session ";
-	echo $_SESSION["Id"];
 }
 
 
 $mysqli->close;
-echo '<pre>';
-echo $data["first_name"];
+//echo '<pre>';
+//echo $data["first_name"];
 header('location: /');
-echo '</pre>';
+//echo '</pre>';
 ?>
