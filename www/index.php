@@ -137,20 +137,23 @@
 	<form name="Select" action="" method="post">
 		
 		 <div id="block1">   <button id="photo1" type="submit" name="select1" value="Выбрать1"> <img  src="<?=$user1["Photo"];?>" width="265" height="265"; alt="<?=$user1["Id"];?>"/> </button> 
-		 <p id="info1"><? echo $user1[firstname];echo $_SESSION["name"];echo $_SESSION["Id"];?></p> </div> 
+		 <p id="info1"><? echo $user1[firstname];echo $_SESSION["name"];echo $_SESSION["Id"];?></p>
+		<button class="btn btn-info btn-lg btn-block" name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение1 </button>
+	
+
+		 </div> 
+		 
 		  <div id="or"> <img src="or.png" height="50" width="60" /> </div>
 		 <div id="block2"> <button id="photo2" type="submit" name="select2" value="Выбрать2"><img  src="<?=$user2["Photo"];?>"width="265" height="265"; alt="<?=$user2["Id"];?>"/></button>      
-	      <p id="info2"><?=$user2[firstname];?></p> </div>
+	      <p id="info2"><?=$user2[firstname];?></p> 
+		  <button class="btn btn-dark btn-lg btn-block" name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение2 </button>
+		  </div>
 		  
 		  
 	</form>
 	
 	
-	<form name="mes" action="" method="post">
-		
-		<button class="btn btn-primary" name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение1 </button>
-		<button class="btn btn-primary" name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение2 </button>
-	</form>
+	
 	<a  href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>
 
 	  
