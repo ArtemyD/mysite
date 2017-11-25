@@ -134,7 +134,11 @@
 	{
 		$array = json_decode($_COOKIE['user2'], true); 
 			update_likes($_SESSION["select2"], $_SESSION["select1"]);
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 2698b92feb69e25749dfcbd5ab32217ed12cb955
 			update_likes($user2["Id"],$user1["stats"],$user2["stats"], $user1["Id"]);
 
 			header('Location:/');
