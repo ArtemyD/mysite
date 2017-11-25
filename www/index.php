@@ -4,7 +4,8 @@
 	{   $reyt = rand(40,50);
 		$mysqli= new mysqli("localhost", "root", "", "polz");
 		$mysqli->query ("SET NAMES 'utf8'");
-		//$mysqli->query("UPDATE `users` SET `likes` = $count_likes WHERE `users`.`Id`=$Id");
+		$user1["likes"]=$user1["likes"]+1;
+		$mysqli->query("UPDATE `users` SET `likes` = $user1[likes] WHERE `users`.`Id`=$Id");
 		if($stats>$stats1)
 		{
 	    $write1= ($stats+$reyt-10);
