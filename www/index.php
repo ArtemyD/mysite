@@ -19,6 +19,7 @@
 		
 		$user1["likes"]=$user1["likes"]+1;
 		$mysqli->query("UPDATE `users` SET `likes` = $user1[likes] WHERE `users`.`Id`=$Id");
+		
 		if($stats>$stats1)
 		{
 	    $write1= ($stats+$reyt-10);
@@ -61,9 +62,9 @@
 	         $to_id=$_POST["f1"];
 	        $mysqli= new mysqli("localhost", "root", "", "polz");
 		    $mysqli->query ("SET NAMES 'utf8'");
-			$fav=0;			
+					
 			$fav=$mysqli->query("SELECT * FROM favor WHERE IdTo=$u_id AND IdFrom=$to_id");
-			if(fav===0)
+			
 			$mysqli->query("INSERT INTO `favor` (`IdTo`, `IdFrom`) VALUES ('$u_id', '$to_id')");
 		}
 		
@@ -72,9 +73,9 @@
 	         $to_id=$_POST["f2"];
 	         $mysqli= new mysqli("localhost", "root", "", "polz");
 		    $mysqli->query ("SET NAMES 'utf8'");
-			$fav=0;			
+						
 			$fav=$mysqli->query("SELECT * FROM favor WHERE IdTo=$u_id AND IdFrom=$to_id");
-			if(fav===0)
+			
 			$mysqli->query("INSERT INTO `favor` (`IdTo`, `IdFrom`) VALUES ('$u_id', '$to_id')");
 		}
 		
@@ -134,9 +135,15 @@
 	if(isset($_POST["select2"]))
 	{
 		$array = json_decode($_COOKIE['user2'], true); 
+<<<<<<< HEAD
 			update_likes($_SESSION["select2"], $_SESSION["select1"]);
+=======
+		
+			update_likes($user2["Id"],$user1["stats"],$user2["stats"], $user1["Id"]);
+>>>>>>> 3d461dd531ea392fcd014186eeb846cb4d61b506
 			header('Location:/');
 	}
+	
 	if(isset($_POST["select3"]))
 	{
 			header('Location:stats.php');
@@ -175,6 +182,7 @@
 	 <div>
 	<form name="Select" action="" method="post">
 		
+<<<<<<< HEAD
 		 <div id="block1">   
 			 <button id="photo1" type="submit" name="select1" value="<?=$user1["Id"];?>"> <img  src="<?=$user1["Photo"];?>" width="265" height="265"; alt="<?=$user1["Id"];?>"/> </button> 
 			 <p id="info1"><? echo $user1[firstname];?></p>
@@ -187,15 +195,31 @@
 			 <button id="photo2" type="submit" name="select2" value="<?=$user2["Id"];?>"><img  src="<?=$user2["Photo"];?>"width="265" height="265"; alt="<?=$user2["Id"];?>"/></button>      
 			  <p id="info2"><?=$user2[firstname];?></p> 
 			  <button class="btn btn-dark btn-lg btn-block" name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение2 </button>
+=======
+		 <div id="block1">   <button id="photo1" type="submit" name="select1" value="Выбрать1"> <img  src="<?=$user1["Photo"];?>" width="265" height="265"; alt="<?=$user1["Id"];?>"/> </button> 
+		 <p id="info1"><? echo $user1[firstname];echo $_SESSION["name"];echo $_SESSION["Id"];?></p>
+		<button class="btn btn-info btn-lg btn-block" name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение1 </button>
+	     <button class="btn btn-dark btn-lg btn-block" name="f1" type="submit" value="<?=$user2["Id"];?>" > В избранное(1) </button>
+
+		 </div> 
+		 
+		  <div id="or"> <img src="or.png" height="50" width="60" /> </div>
+		 <div id="block2"> <button id="photo2" type="submit" name="select2" value="Выбрать2"><img  src="<?=$user2["Photo"];?>"width="265" height="265"; alt="<?=$user2["Id"];?>"/></button>      
+	      <p id="info2"><?=$user2[firstname];?></p> 
+		  <button class="btn btn-dark btn-lg btn-block" name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение2 </button>
+		  		  <button class="btn btn-dark btn-lg btn-block" name="f2" type="submit" value="<?=$user2["Id"];?>" > В избранное(2) </button>
+>>>>>>> 3d461dd531ea392fcd014186eeb846cb4d61b506
 		  </div>
 		  
 		  
 	</form>
 	
 	
+	
 
 	
 	<a  href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>
+	<a  href="izbr.php"><input type="button" value="Избранные" name=buttonmess onClick="izbr.php"></a>
 
 	  <h1><?echo $_SESSION["bool"];?></h1>
 	  
