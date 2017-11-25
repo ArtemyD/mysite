@@ -72,7 +72,11 @@
 	         $to_id=$_POST["f2"];
 	         $mysqli= new mysqli("localhost", "root", "", "polz");
 		    $mysqli->query ("SET NAMES 'utf8'");
+<<<<<<< HEAD
 			$fav=0;			
+=======
+					
+>>>>>>> master
 			$fav=$mysqli->query("SELECT * FROM favor WHERE IdTo=$u_id AND IdFrom=$to_id");
 			if(fav===0)
 			$mysqli->query("INSERT INTO `favor` (`IdTo`, `IdFrom`) VALUES ('$u_id', '$to_id')");
@@ -82,13 +86,21 @@
 	
 	
 	if(isset($_POST["select1"])===false&&isset($_POST["select2"])===false)
-	{    do{
-				$rand=rand(1,13);
-				$rand1=rand(1,13);
-	      }
-		while($rand==$rand1);
+	{    
+		
 		 $mysqli= new mysqli("localhost", "root", "", "polz");
 		$mysqli->query ("SET NAMES 'utf8'");
+		 
+			$co=$mysqli->query("SELECT COUNT(*) FROM users");
+		$total=$co->fetch_array();
+			//echo $total[0];
+
+	do{
+				$rand=rand(1,$total[0]);
+				$rand1=rand(1,$total[0]);
+	      }
+		while($rand==$rand1);
+		 
 		 
 		$result=$mysqli->query("SELECT * FROM users WHERE id=$rand");
 		$user1=$result->fetch_assoc();
@@ -134,6 +146,10 @@
 	{
 		$array = json_decode($_COOKIE['user2'], true); 
 			update_likes($_SESSION["select2"], $_SESSION["select1"]);
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 			header('Location:/');
 	}
 	if(isset($_POST["select3"]))
@@ -178,6 +194,10 @@
 			 <button id="photo1" type="submit" name="select1" value="<?=$user1["Id"];?>"> <img  src="<?=$user1["Photo"];?>" width="265" height="265"; alt="<?=$user1["Id"];?>"/> </button> 
 			 <p id="info1"><? echo $user1[firstname];?></p>
 			<button class="btn btn-info btn-lg btn-block" name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение1 </button>
+<<<<<<< HEAD
+=======
+			<button class="btn btn-info btn-lg btn-block" name="f1" type="submit" value="<?=$user1["Id"];?>" > добавить в избранное </button>
+>>>>>>> master
 		 </div> 
 		 
 		  <div id="or"> <img src="or.png" height="50" width="60" /> </div>
@@ -186,6 +206,10 @@
 			 <button id="photo2" type="submit" name="select2" value="<?=$user2["Id"];?>"><img  src="<?=$user2["Photo"];?>"width="265" height="265"; alt="<?=$user2["Id"];?>"/></button>      
 			  <p id="info2"><?=$user2[firstname];?></p> 
 			  <button class="btn btn-dark btn-lg btn-block" name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение2 </button>
+<<<<<<< HEAD
+=======
+			  <button class="btn btn-info btn-lg btn-block" name="f2" type="submit" value="<?=$user1["Id"];?>" > добавить в избранное </button>
+>>>>>>> master
 		  </div>
 		  
 		  
