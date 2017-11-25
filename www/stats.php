@@ -61,8 +61,5 @@ while (($row=$result->fetch_assoc())!=false)
 		echo $row["firstname"]." ".$row["lastname"]." ".$row["likes"]."<br>";
 	}
 
-
-	
-
  
   ?>
