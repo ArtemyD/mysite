@@ -1,6 +1,6 @@
-<?
+<?  session_start();
 	function buy_chat($Id, $Id1)
-	{
+	{    
 		 $mysqli= new mysqli("localhost", "root", "", "polz");
 		$mysqli->query ("SET NAMES 'utf8'");
 		if($Id==$Id1)

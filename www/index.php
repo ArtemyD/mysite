@@ -181,7 +181,7 @@ if($_SESSION["bool"]===1)
 			header('Location:stats.php');
 	}
 	
-	
+	if($_SESSION["bool"]===1){
 	require_once "buy_chat.php";
 	$price1= buy_chat($_SESSION["Id"], $user1["Id"]);
 	$price2= buy_chat($_SESSION["Id"], $user2["Id"]);
@@ -191,6 +191,7 @@ if($_SESSION["bool"]===1)
 	
 	if($price2 > $_SESSION["credits"])
 		$key_mess2="disabled";
+	}
 ?>
 
 <html>
