@@ -175,25 +175,11 @@
 	</form>
 	
 	
-<<<<<<< HEAD
+
 	
 	<a  href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>
 
 	  
-=======
-	<form name="mes" action="" method="post">
-		
-		<button name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение1 </button>
-		<button name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение2 </button>
-	</form>
-	<a href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>
-<form name="fav" action="" method="post">
-		
-		<button name="f1" type="submit" value="<?=$user1["Id"];?>" > в избранные (1) </button>
-		<button name="f2" type="submit" value="<?=$user2["Id"];?>" > в избранные (2) </button>
-	</form>
-<a href="izbr.php"><input type="button" value="избранные" name=buttonmess onClick="favor.php"></a>	  
->>>>>>> 5531a2d3e914a27aeb889f7130e9b68d5c2182ec
 	  
 	</div>
 	
