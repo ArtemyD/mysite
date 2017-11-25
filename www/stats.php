@@ -43,22 +43,22 @@ $country = $_POST['fruits'];
 $country1 = $_POST['course'];
 
 
-$result= zapr("SELECT * FROM `users` ORDER BY `users`.`likes` DESC");
+$result= zapr("SELECT * FROM `users` ORDER BY `users`.`stats` DESC");
 if($country=="sfu")
 { if($country1=="all")
-	$result= zapr("SELECT * FROM `users` ORDER BY `users`.`likes` DESC");
-  else $result= zapr("SELECT * FROM `users` WHERE `course`='$country1'  ORDER BY `users`.`likes` DESC");
+	$result= zapr("SELECT * FROM `users` ORDER BY `users`.`stats` DESC");
+  else $result= zapr("SELECT * FROM `users` WHERE `course`='$country1'  ORDER BY `users`.`stats` DESC");
 }
 else
 {  if($country1=="all")
-	  $result= zapr("SELECT * FROM `users` WHERE `institute` = '$country' ORDER BY `users`.`likes` DESC");
+	  $result= zapr("SELECT * FROM `users` WHERE `institute` = '$country' ORDER BY `users`.`stats` DESC");
   else
-    $result= zapr("SELECT * FROM `users` WHERE `institute` = '$country' and `course`='$country1' ORDER BY `users`.`likes` DESC ");
+    $result= zapr("SELECT * FROM `users` WHERE `institute` = '$country' and `course`='$country1' ORDER BY `users`.`stats` DESC ");
 }
 
 while (($row=$result->fetch_assoc())!=false)
 	{
-		echo $row["firstname"]." ".$row["lastname"]." ".$row["likes"]."<br>";
+		echo $row["firstname"]." ".$row["lastname"]." ".$row["stats"]."<br>";
 	}
 
  
