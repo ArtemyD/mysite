@@ -210,10 +210,10 @@ if($_SESSION["bool"]===1)
 ?>
 
 <html>
-    <head>
+	<meta charset="utf-8">
+   <head>
 <title>SFUmash</title>
 <link rel="stylesheet" type="text/css" href="style1.css" />
-<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -221,20 +221,23 @@ if($_SESSION["bool"]===1)
 </head>
 <body>
     <header>
-
-	 	<form name="Select1" action="" method="post"> 
-	 		<button type="submit" name="select3" value="Выбрать2">
-		 		<img  src="<?="tri.png";?>"width="40" height="27";/>
-		 	</button> 
-		</form> 
-	    	    
-	  	<form name="exit" action="" method="post">
-			<button type="submit" name="exit" value="Выход">Выход</button>
-	 	 </form>
-	
 		<div id="logtext"> <img id="logo" src="logotext.png" /> </div>
 
-	  	<div id="vk"> 
+		<div id="rating">
+	 		<form name="Select1" action="" method="post"> 
+	 			<button type="submit" name="select3" value="Выбрать2">Рейтинг
+		 			<!--<img  src="<?="tri.png";?>"width="40" height="27";/>-->
+		 		</button> 
+			</form> 
+		</div>
+		
+		<div id="log_out" class="log_in-out">
+	  		<form name="exit" action="" method="post">
+				<button type="submit" name="exit" value="Выход">Выход</button>
+	 	 	</form>
+		</div>
+
+	  	<div id="vk" class "log_in-out"> 
 		  <a href="https://oauth.vk.com/authorize?client_id=<?=ID?>&display=page&redirect_uri=<?=URL?>&response_type=code" target="_blank">
 		  <img src="vk.png" height="50" width="60"/></a>
 		</div>

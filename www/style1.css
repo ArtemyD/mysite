@@ -23,7 +23,7 @@ header
 
 #logtext 
 {
-	margin-left: 70px;
+	margin-left: 10px;
      margin-top:-4px;
       float:left;	 
 }
@@ -31,16 +31,36 @@ header button
 {  border:0px;  
     margin-top: 10px;
 	 margin-left: 5px;
-   background-color:transparent;
+   	background-color:transparent;
 	float: left;
 }
+
+#rating
+{
+	margin-left: 10px;
+	margin-top:-4px;
+	 float:left;
+}
+
+.log_in-out
+{
+	margin-right:40px;
+	margin-top:5px;
+	float:right;
+}
+
 #vk
 {  
 margin-right:40px;
 margin-top:5px;
 float:right;
-	
 }
+
+#log_out
+{
+	/*visibility: hidden;*/
+}
+
 #p
 {
 	margin-top:100px;
