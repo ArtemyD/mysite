@@ -150,6 +150,15 @@
 			$cr=$user1["credits"]+1;
 			$mysqli->query("UPDATE `users` SET `credits` = $cr WHERE `users`.`Id`=$u_id");
 			}
+			$mysqli= new mysqli("localhost", "root", "", "polz");
+		    $mysqli->query ("SET NAMES 'utf8'");
+			$from_id = $_POST["select1"];
+			$result3=$mysqli->query("SELECT * FROM users WHERE id=$from_id");
+			$user2=$result3->fetch_assoc();
+			$cr1=$user2["credits"]+5;
+			$mysqli->query("UPDATE `users` SET `credits` = $cr1 WHERE `users`.`Id`=$from_id");
+			
+			
 		      
 				
 			}
@@ -172,7 +181,14 @@ if($_SESSION["bool"]===1)
 			$cr=$user1["credits"]+1;
 			$mysqli->query("UPDATE `users` SET `credits` = $cr WHERE `users`.`Id`=$u_id");
 			}
-		      
+			    $mysqli= new mysqli("localhost", "root", "", "polz");
+		    $mysqli->query ("SET NAMES 'utf8'");
+		     	$from_id = $_SESSION["select2"];
+			$result3=$mysqli->query("SELECT * FROM users WHERE id=$from_id");
+			$user2=$result3->fetch_assoc();
+			$cr1=$user2["credits"]+5;
+			$mysqli->query("UPDATE `users` SET `credits` = $cr1 WHERE `users`.`Id`=$from_id");
+			 
 				
 			}
 			header('Location:/');

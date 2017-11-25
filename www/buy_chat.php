@@ -1,7 +1,12 @@
 
+<<<<<<< HEAD
 <?  session_start();
 
 
+=======
+<?
+	
+>>>>>>> 6e8cd7e46a989a7d834d1424f0b7e59a18a7c10c
 
 	function buy_chat($Id, $Id1)
 	{    
