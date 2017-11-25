@@ -135,14 +135,6 @@
 	{
 		$array = json_decode($_COOKIE['user2'], true); 
 			update_likes($_SESSION["select2"], $_SESSION["select1"]);
-<<<<<<< HEAD
-<<<<<<< HEAD
-		
-			update_likes($user2["Id"],$user1["stats"],$user2["stats"], $user1["Id"]);
-=======
->>>>>>> parent of 58a249c... Merge branch 'master' of https://github.com/ArtemyD/mysite
-=======
->>>>>>> parent of 58a249c... Merge branch 'master' of https://github.com/ArtemyD/mysite
 			header('Location:/');
 	}
 	if(isset($_POST["select3"]))
