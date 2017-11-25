@@ -11,7 +11,7 @@
 		
 		$result1=$mysqli->query("SELECT * FROM users WHERE Id=$Id1");
 		$user2=$result1->fetch_assoc();
-		
+		$mysqli->close();
 		$diff=abs($user1["stats"]-$user2["stats"]);
 		if($user1["stats"]==$user2["stats"])
 		{
