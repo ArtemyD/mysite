@@ -61,9 +61,9 @@
 	         $to_id=$_POST["f1"];
 	        $mysqli= new mysqli("localhost", "root", "", "polz");
 		    $mysqli->query ("SET NAMES 'utf8'");
-			$fav=0;			
+					
 			$fav=$mysqli->query("SELECT * FROM favor WHERE IdTo=$u_id AND IdFrom=$to_id");
-			if(fav===0)
+			
 			$mysqli->query("INSERT INTO `favor` (`IdTo`, `IdFrom`) VALUES ('$u_id', '$to_id')");
 		}
 		
@@ -72,9 +72,9 @@
 	         $to_id=$_POST["f2"];
 	         $mysqli= new mysqli("localhost", "root", "", "polz");
 		    $mysqli->query ("SET NAMES 'utf8'");
-			$fav=0;			
+					
 			$fav=$mysqli->query("SELECT * FROM favor WHERE IdTo=$u_id AND IdFrom=$to_id");
-			if(fav===0)
+			
 			$mysqli->query("INSERT INTO `favor` (`IdTo`, `IdFrom`) VALUES ('$u_id', '$to_id')");
 		}
 		
@@ -135,11 +135,11 @@
 	{
 		$array = json_decode($_COOKIE['user2'], true); 
 			update_likes($_SESSION["select2"], $_SESSION["select1"]);
-<<<<<<< HEAD
+
 		
 			update_likes($user2["Id"],$user1["stats"],$user2["stats"], $user1["Id"]);
-=======
->>>>>>> parent of 58a249c... Merge branch 'master' of https://github.com/ArtemyD/mysite
+
+
 			header('Location:/');
 	}
 	if(isset($_POST["select3"]))
@@ -184,6 +184,7 @@
 			 <button id="photo1" type="submit" name="select1" value="<?=$user1["Id"];?>"> <img  src="<?=$user1["Photo"];?>" width="265" height="265"; alt="<?=$user1["Id"];?>"/> </button> 
 			 <p id="info1"><? echo $user1[firstname];?></p>
 			<button class="btn btn-info btn-lg btn-block" name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение1 </button>
+			<button class="btn btn-info btn-lg btn-block" name="f2" type="submit" value="<?=$user1["Id"];?>" > добавить в избранное </button>
 		 </div> 
 		 
 		  <div id="or"> <img src="or.png" height="50" width="60" /> </div>
