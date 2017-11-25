@@ -1,10 +1,10 @@
 <?     include 'config.php' ;
       session_start();
-	function update_likes($Id, $count_likes,$stats,$stats1,$Id1)
+	function update_likes($Id, $stats,$stats1,$Id1)
 	{   $reyt = rand(40,50);
 		$mysqli= new mysqli("localhost", "root", "", "polz");
 		$mysqli->query ("SET NAMES 'utf8'");
-		$mysqli->query("UPDATE `users` SET `likes` = $count_likes WHERE `users`.`Id`=$Id");
+		//$mysqli->query("UPDATE `users` SET `likes` = $count_likes WHERE `users`.`Id`=$Id");
 		if($stats>$stats1)
 		{
 	    $write1= ($stats+$reyt-10);
@@ -111,13 +111,13 @@
 	if(isset($_POST["select1"]))
 		{
 			$array = json_decode($_COOKIE['user1'], true); 
-			update_likes($array["Id"],$array[likes]+1);
+			update_likes($user1["Id"],$user1["stats"],$user2["stats"], $user2["Id"]);
 			header('Location:/');
 		}
 	if(isset($_POST["select2"]))
 	{
 		$array = json_decode($_COOKIE['user2'], true); 
-			update_likes($array["Id"],$array[likes]+1);
+			update_likes($user2["Id"],$user1["stats"],$user2["stats"], $user1["Id"]);
 			header('Location:/');
 	}
 	if(isset($_POST["select3"]))
