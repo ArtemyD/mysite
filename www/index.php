@@ -47,6 +47,7 @@
 	
 	if(isset($_POST["message1"]))
 		{
+		
 		$_SESSION["To"]=$_POST["message1"];
 		header("location: message.php");
 		}

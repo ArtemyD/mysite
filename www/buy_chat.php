@@ -1,9 +1,8 @@
-<<<<<<< HEAD
+
 <?  session_start();
-=======
-<?
-	
->>>>>>> 4fc62534bb7b78469eea35990665c0902326bd7b
+
+
+
 	function buy_chat($Id, $Id1)
 	{    
 		 $mysqli= new mysqli("localhost", "root", "", "polz");
