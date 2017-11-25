@@ -248,7 +248,7 @@ if($_SESSION["bool"]===1)
 	
 	<a  href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>
 
-	  <h1><?echo $_SESSION["bool"];?></h1>
+	  <h3>Кредиты: <?echo $_SESSION["credits"];?>$</h3>
 	  
 	</div>
 	
