@@ -1,24 +1,12 @@
 <?     include 'config.php' ;
       session_start();
-	function update_likes($Id, $Id1)
-	{   
-		$reyt = rand(40,50);
-		
+	function update_likes($Id, $stats,$stats1,$Id1)
+	{   $reyt = rand(40,50);
 		$mysqli= new mysqli("localhost", "root", "", "polz");
 		$mysqli->query ("SET NAMES 'utf8'");
-		
-		$result=$mysqli->query("SELECT * FROM users WHERE Id=$Id");
-		$user1=$result->fetch_assoc();
-		print_r($user1);
-		$stats=$user1["stats"];
-		
-		$result1=$mysqli->query("SELECT * FROM users WHERE Id=$Id1");
-		$user2=$result1->fetch_assoc();
-		print_r($user2);
-		$stats1=$user2["stats"];
-		
 		$user1["likes"]=$user1["likes"]+1;
 		$mysqli->query("UPDATE `users` SET `likes` = $user1[likes] WHERE `users`.`Id`=$Id");
+		
 		if($stats>$stats1)
 		{
 	    $write1= ($stats+$reyt-10);
@@ -61,9 +49,9 @@
 	         $to_id=$_POST["f1"];
 	        $mysqli= new mysqli("localhost", "root", "", "polz");
 		    $mysqli->query ("SET NAMES 'utf8'");
-			$fav=0;			
+					
 			$fav=$mysqli->query("SELECT * FROM favor WHERE IdTo=$u_id AND IdFrom=$to_id");
-			if(fav===0)
+			
 			$mysqli->query("INSERT INTO `favor` (`IdTo`, `IdFrom`) VALUES ('$u_id', '$to_id')");
 		}
 		
@@ -72,9 +60,9 @@
 	         $to_id=$_POST["f2"];
 	         $mysqli= new mysqli("localhost", "root", "", "polz");
 		    $mysqli->query ("SET NAMES 'utf8'");
-			$fav=0;			
+						
 			$fav=$mysqli->query("SELECT * FROM favor WHERE IdTo=$u_id AND IdFrom=$to_id");
-			if(fav===0)
+			
 			$mysqli->query("INSERT INTO `favor` (`IdTo`, `IdFrom`) VALUES ('$u_id', '$to_id')");
 		}
 		
@@ -102,9 +90,6 @@
 		
 		$mysqli->close();
 		
-		$_SESSION["select1"]=$user1["Id"];
-		$_SESSION["select2"]=$user2["Id"];
-		
 		$json1 = json_encode($user1);
 		$json2 = json_encode($user2);
 		
@@ -115,7 +100,6 @@
 	}
 	
 	
-
 	if(isset($_POST["exit"]))
 		{
 			session_destroy();
@@ -127,21 +111,22 @@
 	
 	if(isset($_POST["select1"]))
 		{
-			$array = json_decode($_COOKIE['user1'], true);
-			update_likes($_SESSION["select1"], $_SESSION["select2"]);
+			$array = json_decode($_COOKIE['user1'], true); 
+			update_likes($user1["Id"],$user1["stats"],$user2["stats"], $user2["Id"]);
 			header('Location:/');
 		}
 	if(isset($_POST["select2"]))
 	{
 		$array = json_decode($_COOKIE['user2'], true); 
-			update_likes($_SESSION["select2"], $_SESSION["select1"]);
+		
+			update_likes($user2["Id"],$user1["stats"],$user2["stats"], $user1["Id"]);
 			header('Location:/');
 	}
+	
 	if(isset($_POST["select3"]))
 	{
 			header('Location:stats.php');
 	}
-	
 	
 	
 ?>
@@ -175,29 +160,31 @@
 	 <div>
 	<form name="Select" action="" method="post">
 		
-		 <div id="block1">   
-			 <button id="photo1" type="submit" name="select1" value="<?=$user1["Id"];?>"> <img  src="<?=$user1["Photo"];?>" width="265" height="265"; alt="<?=$user1["Id"];?>"/> </button> 
-			 <p id="info1"><? echo $user1[firstname];?></p>
-			<button class="btn btn-info btn-lg btn-block" name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение1 </button>
+		 <div id="block1">   <button id="photo1" type="submit" name="select1" value="Выбрать1"> <img  src="<?=$user1["Photo"];?>" width="265" height="265"; alt="<?=$user1["Id"];?>"/> </button> 
+		 <p id="info1"><? echo $user1[firstname];echo $_SESSION["name"];echo $_SESSION["Id"];?></p>
+		<button class="btn btn-info btn-lg btn-block" name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение1 </button>
+	     <button class="btn btn-dark btn-lg btn-block" name="f1" type="submit" value="<?=$user2["Id"];?>" > В избранное(1) </button>
+
 		 </div> 
 		 
 		  <div id="or"> <img src="or.png" height="50" width="60" /> </div>
-		  
-		 <div id="block2"> 
-			 <button id="photo2" type="submit" name="select2" value="<?=$user2["Id"];?>"><img  src="<?=$user2["Photo"];?>"width="265" height="265"; alt="<?=$user2["Id"];?>"/></button>      
-			  <p id="info2"><?=$user2[firstname];?></p> 
-			  <button class="btn btn-dark btn-lg btn-block" name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение2 </button>
+		 <div id="block2"> <button id="photo2" type="submit" name="select2" value="Выбрать2"><img  src="<?=$user2["Photo"];?>"width="265" height="265"; alt="<?=$user2["Id"];?>"/></button>      
+	      <p id="info2"><?=$user2[firstname];?></p> 
+		  <button class="btn btn-dark btn-lg btn-block" name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение2 </button>
+		  		  <button class="btn btn-dark btn-lg btn-block" name="f2" type="submit" value="<?=$user2["Id"];?>" > В избранное(2) </button>
 		  </div>
 		  
 		  
 	</form>
 	
 	
+	
 
 	
 	<a  href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>
+	<a  href="izbr.php"><input type="button" value="Избранные" name=buttonmess onClick="izbr.php"></a>
 
-	  <h1><?echo $_SESSION["bool"];?></h1>
+	  
 	  
 	</div>
 	
