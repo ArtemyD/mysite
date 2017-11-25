@@ -82,13 +82,21 @@
 	
 	
 	if(isset($_POST["select1"])===false&&isset($_POST["select2"])===false)
-	{    do{
-				$rand=rand(1,13);
-				$rand1=rand(1,13);
-	      }
-		while($rand==$rand1);
+	{    
+		
 		 $mysqli= new mysqli("localhost", "root", "", "polz");
 		$mysqli->query ("SET NAMES 'utf8'");
+		 
+			$co=$mysqli->query("SELECT COUNT(*) FROM users");
+		$total=$co->fetch_array();
+			//echo $total[0];
+
+	do{
+				$rand=rand(1,$total[0]);
+				$rand1=rand(1,$total[0]);
+	      }
+		while($rand==$rand1);
+		 
 		 
 		$result=$mysqli->query("SELECT * FROM users WHERE id=$rand");
 		$user1=$result->fetch_assoc();
