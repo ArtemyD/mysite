@@ -46,7 +46,7 @@ if($user1["Id"]==0)
 	$result=$mysqli->query("SELECT * FROM users WHERE idvk=$idvk1");
 		$user1=$result->fetch_assoc();
 		$_SESSION["Id"]=$user1["Id"];
-		
+		$_SESSION["credits"]=$user1["credits"];
 
 }
 else 
@@ -54,6 +54,7 @@ else
 	$mysqli->query("UPDATE `users` SET `Photo` = $photo WHERE `users`.`idvk`=$idvk1");
 	
 	$_SESSION["Id"]=$user1["Id"];
+	$_SESSION["credits"]=$user1["credits"];
 }
 
 

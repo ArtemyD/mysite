@@ -182,7 +182,15 @@ if($_SESSION["bool"]===1)
 	}
 	
 	
+	require_once "buy_chat.php";
+	$price1= buy_chat($_SESSION["Id"], $user1["Id"]);
+	$price2= buy_chat($_SESSION["Id"], $user2["Id"]);
+	$key_mess1=" "; $key_mess2=" ";
+	if($price1 > $_SESSION["credits"])
+		$key_mess1="disabled";
 	
+	if($price2 > $_SESSION["credits"])
+		$key_mess2="disabled";
 ?>
 
 <html>
@@ -217,7 +225,7 @@ if($_SESSION["bool"]===1)
 		 <div id="block1">   
 			 <button id="photo1" type="submit" name="select1" value="<?=$user1["Id"];?>"> <img  src="<?=$user1["Photo"];?>" width="265" height="265"; alt="<?=$user1["Id"];?>"/> </button> 
 			 <p id="info1"><? echo $user1[firstname]; ?></p>
-			<button class="btn btn-info btn-lg btn-block" name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение <?require_once "buy_chat.php";echo buy_chat($_SESSION["Id"], $user1["Id"])?>$</button>
+			<button class="btn btn-info btn-lg btn-block" name="message1" type="submit" value="<?=$user1["Id"];?>" <?=$key_mess1;?>> Сообщение <?echo $price1?>$</button>
 			
 			<button class="btn btn-info btn-lg btn-block" name="f1" type="submit" value="<?=$user1["Id"];?>" > добавить в избранное </button>
 		 </div> 
@@ -227,7 +235,7 @@ if($_SESSION["bool"]===1)
 		 <div id="block2"> 
 			 <button id="photo2" type="submit" name="select2" value="<?=$user2["Id"];?>"><img  src="<?=$user2["Photo"];?>"width="265" height="265"; alt="<?=$user2["Id"];?>"/></button>      
 			  <p id="info2"><?=$user2[firstname];?></p> 
-			  <button class="btn btn-info btn-lg btn-block" name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение  <?echo buy_chat($_SESSION["Id"], $user2["Id"])?>$</button>
+			  <button class="btn btn-info btn-lg btn-block" name="message2" type="submit" value="<?=$user2["Id"];?>" <?=$key_mess2;?>> Сообщение  <?echo $price2?>$</button>
 			 
 			  <button class="btn btn-info btn-lg btn-block" name="f2" type="submit" value="<?=$user2["Id"];?>" > добавить в избранное </button>
 		  </div>
