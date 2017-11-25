@@ -41,10 +41,7 @@
 		
 		$mysqli->close();
 	}
-	
-	
-	
-	
+
 	if(isset($_POST["message1"]))
 		{
 		
@@ -79,9 +76,6 @@
 			$mysqli->query("INSERT INTO `favor` (`IdTo`, `IdFrom`) VALUES ('$u_id', '$to_id')");
 		}
 		
-	
-	
-	
 	if(isset($_POST["select1"])===false&&isset($_POST["select2"])===false)
 	{    
 		
@@ -119,17 +113,14 @@
 		
 		setcookie("user1", $json1, time()+20);
 		setcookie("user2", $json2, time()+20);
-		
-		
-	}
 	
+	}
 	
 	if(isset($_POST["exit"]))
 		{
 			session_destroy();
 			header('location: /');
 		}
-		
 		
 		echo $_SESSION["likes"];
 	
@@ -157,8 +148,7 @@
 			$user2=$result3->fetch_assoc();
 			$cr1=$user2["credits"]+5;
 			$mysqli->query("UPDATE `users` SET `credits` = $cr1 WHERE `users`.`Id`=$from_id");
-		      
-				
+		    
 			}
 			header('Location:/');
 		}
@@ -186,8 +176,6 @@ if($_SESSION["bool"]===1)
 			$user2=$result3->fetch_assoc();
 			$cr1=$user2["credits"]+5;
 			$mysqli->query("UPDATE `users` SET `credits` = $cr1 WHERE `users`.`Id`=$from_id");
-			 
-				
 			}
 			header('Location:/');
 	}
