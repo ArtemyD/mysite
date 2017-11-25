@@ -1,8 +1,10 @@
 <?
+	
 	function buy_chat($Id, $Id1)
 	{
 		 $mysqli= new mysqli("localhost", "root", "", "polz");
 		$mysqli->query ("SET NAMES 'utf8'");
+		
 		if($Id==$Id1)
 			return 0;
 		
@@ -12,6 +14,7 @@
 		$result1=$mysqli->query("SELECT * FROM users WHERE Id=$Id1");
 		$user2=$result1->fetch_assoc();
 		$mysqli->close();
+		
 		$diff=abs($user1["stats"]-$user2["stats"]);
 		if($user1["stats"]==$user2["stats"])
 		{
