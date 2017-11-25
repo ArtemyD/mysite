@@ -22,7 +22,7 @@
 			$price_chat=10;
 		}
 		else
-		if($user1["stats"]>$user2["stats"])
+		if($user1["stats"]<$user2["stats"])
 		{
 			if($diff<100)
 			{
@@ -79,7 +79,7 @@
 			
 		}
 		else
-		if($user1["stats"]<$user2["stats"])
+		if($user1["stats"]>$user2["stats"])
 		{
 			if($diff<100)
 			{

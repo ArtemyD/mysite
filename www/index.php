@@ -157,8 +157,6 @@
 			$user2=$result3->fetch_assoc();
 			$cr1=$user2["credits"]+5;
 			$mysqli->query("UPDATE `users` SET `credits` = $cr1 WHERE `users`.`Id`=$from_id");
-			
-			
 		      
 				
 			}
