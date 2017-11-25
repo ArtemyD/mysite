@@ -134,14 +134,9 @@
 	{
 		$array = json_decode($_COOKIE['user2'], true); 
 			update_likes($_SESSION["select2"], $_SESSION["select1"]);
-<<<<<<< HEAD
 
-		
 			update_likes($user2["Id"],$user1["stats"],$user2["stats"], $user1["Id"]);
 
-
-=======
->>>>>>> ef6d1f831f4a10c66ea5684dfffd409592f510df
 			header('Location:/');
 	}
 	if(isset($_POST["select3"]))
@@ -186,7 +181,7 @@
 			 <button id="photo1" type="submit" name="select1" value="<?=$user1["Id"];?>"> <img  src="<?=$user1["Photo"];?>" width="265" height="265"; alt="<?=$user1["Id"];?>"/> </button> 
 			 <p id="info1"><? echo $user1[firstname];?></p>
 			<button class="btn btn-info btn-lg btn-block" name="message1" type="submit" value="<?=$user1["Id"];?>" > Сообщение1 </button>
-			<button class="btn btn-info btn-lg btn-block" name="f2" type="submit" value="<?=$user1["Id"];?>" > добавить в избранное </button>
+			<button class="btn btn-info btn-lg btn-block" name="f1" type="submit" value="<?=$user1["Id"];?>" > добавить в избранное </button>
 		 </div> 
 		 
 		  <div id="or"> <img src="or.png" height="50" width="60" /> </div>
@@ -195,6 +190,7 @@
 			 <button id="photo2" type="submit" name="select2" value="<?=$user2["Id"];?>"><img  src="<?=$user2["Photo"];?>"width="265" height="265"; alt="<?=$user2["Id"];?>"/></button>      
 			  <p id="info2"><?=$user2[firstname];?></p> 
 			  <button class="btn btn-dark btn-lg btn-block" name="message2" type="submit" value="<?=$user2["Id"];?>" > Сообщение2 </button>
+			  <button class="btn btn-info btn-lg btn-block" name="f2" type="submit" value="<?=$user1["Id"];?>" > добавить в избранное </button>
 		  </div>
 		  
 		  
