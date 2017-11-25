@@ -9,12 +9,12 @@
 		
 		$result=$mysqli->query("SELECT * FROM users WHERE Id=$Id");
 		$user1=$result->fetch_assoc();
-		print_r($user1);
+		//print_r($user1);
 		$stats=$user1["stats"];
 		
 		$result1=$mysqli->query("SELECT * FROM users WHERE Id=$Id1");
 		$user2=$result1->fetch_assoc();
-		print_r($user2);
+		//print_r($user2);
 		$stats1=$user2["stats"];
 		
 		$user1["likes"]=$user1["likes"]+1;
