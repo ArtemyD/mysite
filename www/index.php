@@ -130,19 +130,50 @@
 		}
 		
 		
-		
+		echo $_SESSION["likes"];
 	
 	if(isset($_POST["select1"]))
 		{
 			$array = json_decode($_COOKIE['user1'], true);
 			update_likes($_SESSION["select1"], $_SESSION["select2"]);
+			if($_SESSION["bool"]===1)
+			{     $likes=$_SESSION["likes"];
+		          $_SESSION["likes"]=$likes+1;
+		         if($_SESSION["likes"]===5){
+					 $_SESSION["likes"]=0;
+		         $mysqli= new mysqli("localhost", "root", "", "polz");
+		    $mysqli->query ("SET NAMES 'utf8'");
+			$u_id=$_SESSION["Id"];
+			$result2=$mysqli->query("SELECT * FROM users WHERE id=$u_id");
+			$user1=$result2->fetch_assoc();
+			$cr=$user1["credits"]+1;
+			$mysqli->query("UPDATE `users` SET `credits` = $cr WHERE `users`.`Id`=$u_id");
+			}
+		      
+				
+			}
 			header('Location:/');
 		}
 	if(isset($_POST["select2"]))
 	{
 		$array = json_decode($_COOKIE['user2'], true); 
 			update_likes($_SESSION["select2"], $_SESSION["select1"]);
-
+if($_SESSION["bool"]===1)
+			{     $likes=$_SESSION["likes"];
+		          $_SESSION["likes"]=$likes+1;
+		         if($_SESSION["likes"]===5){
+					 $_SESSION["likes"]=0;
+		         $mysqli= new mysqli("localhost", "root", "", "polz");
+		    $mysqli->query ("SET NAMES 'utf8'");
+			$u_id=$_SESSION["Id"];
+			$result2=$mysqli->query("SELECT * FROM users WHERE id=$u_id");
+			$user1=$result2->fetch_assoc();
+			$cr=$user1["credits"]+1;
+			$mysqli->query("UPDATE `users` SET `credits` = $cr WHERE `users`.`Id`=$u_id");
+			}
+		      
+				
+			}
 			header('Location:/');
 	}
 	if(isset($_POST["select3"]))
