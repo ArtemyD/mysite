@@ -135,12 +135,9 @@
 	if(isset($_POST["select2"]))
 	{
 		$array = json_decode($_COOKIE['user2'], true); 
-<<<<<<< HEAD
 			update_likes($_SESSION["select2"], $_SESSION["select1"]);
-=======
 		
 			update_likes($user2["Id"],$user1["stats"],$user2["stats"], $user1["Id"]);
->>>>>>> 3d461dd531ea392fcd014186eeb846cb4d61b506
 			header('Location:/');
 	}
 	
