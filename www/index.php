@@ -195,7 +195,12 @@ if($_SESSION["bool"]===1)
 	{
 			header('Location:stats.php');
 	}
-	
+
+	if(isset($_POST["mymessages"]))
+	{
+			header('Location:print_mes.php');
+	}
+
 	if($_SESSION["bool"]===1){
 	require_once "buy_chat.php";
 	$price1= buy_chat($_SESSION["Id"], $user1["Id"]);
@@ -230,7 +235,18 @@ if($_SESSION["bool"]===1)
 		 		</button> 
 			</form> 
 		</div>
+
+		<div id="MyMessages">
+			<!--<a  href="print_mes.php">Мои сообщения</a>-->
+			<form name="mymessages" action="" method="post"> 
+	 			<button type="submit" name="mymessages" value="ВыбратьМ">Мои сообщения</button> 
+			</form> 
+		</div>
 		
+		<div id ="credits_lettering">
+			<h3>Кредиты: <?echo $_SESSION["credits"];?>$</h3>
+		</div>
+
 		<div id="log_out" class="log_in-out">
 	  		<form name="exit" action="" method="post">
 				<button type="submit" name="exit" value="Выход">Выход</button>
@@ -276,10 +292,8 @@ if($_SESSION["bool"]===1)
 		  		  
 		</form>
 		
-		<a  href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>
-
-	  	<h3>Кредиты: <?echo $_SESSION["credits"];?>$</h3>
-	  
+		<!--<a  href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>-->
+ 
 	</div>
 	
 	
