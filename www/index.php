@@ -190,15 +190,15 @@ if($_SESSION["bool"]===1)
 	}
 
 	if($_SESSION["bool"]===1){
-	require_once "buy_chat.php";
-	$price1= buy_chat($_SESSION["Id"], $user1["Id"]);
-	$price2= buy_chat($_SESSION["Id"], $user2["Id"]);
+	require_once "price_chat.php";
+	$price1= price_chat($_SESSION["Id"], $user1["Id"]);
+	$price2= price_chat($_SESSION["Id"], $user2["Id"]);
 	$key_mess1=" "; $key_mess2=" ";
-	if($price1 > $_SESSION["credits"])
-		$key_mess1="disabled";
+	//if($price1 > $_SESSION["credits"])
+		//$key_mess1="disabled";
 	
-	if($price2 > $_SESSION["credits"])
-		$key_mess2="disabled";
+	//if($price2 > $_SESSION["credits"])
+		//$key_mess2="disabled";
 	}
 ?>
 
