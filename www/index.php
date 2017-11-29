@@ -122,7 +122,7 @@
 			header('location: /');
 		}
 		
-		echo $_SESSION["likes"];
+		//echo $_SESSION["likes"];
 	
 	if(isset($_POST["select1"]))
 		{
@@ -200,6 +200,18 @@ if($_SESSION["bool"]===1)
 	//if($price2 > $_SESSION["credits"])
 		//$key_mess2="disabled";
 	}
+	
+	
+	$mysqli= new mysqli("localhost", "root", "", "polz");
+		$mysqli->query ("SET NAMES 'utf8'");
+	
+		$autuser1=$mysqli->query("SELECT * FROM users WHERE Id=$_SESSION[Id]");
+		$autuser=$autuser1->fetch_assoc();
+		$_SESSION["credits"]=$autuser["credits"];
+	
+	$mysqli->close;
+	
+	
 ?>
 
 <html>
@@ -232,7 +244,7 @@ if($_SESSION["bool"]===1)
 		</div>
 		
 		<div id ="credits_lettering">
-			<h3>Кредиты: <?echo $_SESSION["credits"];?>$</h3>
+			<h5>Кредиты: <?echo $_SESSION["credits"];?>$</h5>
 		</div>
 
 		<div id="log_out" class="log_in-out">
