@@ -201,14 +201,15 @@ if($_SESSION["bool"]===1)
 		//$key_mess2="disabled";
 	}
 	
-	
+	if($_SESSION["bool"]===1)
+			{ 
 	$mysqli= new mysqli("localhost", "root", "", "polz");
 		$mysqli->query ("SET NAMES 'utf8'");
-	
-		$autuser1=$mysqli->query("SELECT * FROM users WHERE Id=$_SESSION[Id]");
+	      $gId = $_SESSION["Id"];
+		$autuser1=$mysqli->query("SELECT * FROM users WHERE Id=$gId");
 		$autuser=$autuser1->fetch_assoc();
 		$_SESSION["credits"]=$autuser["credits"];
-	
+			}
 	$mysqli->close;
 	
 	
@@ -240,6 +241,7 @@ if($_SESSION["bool"]===1)
 			<!--<a  href="print_mes.php">Мои сообщения</a>-->
 			<form name="mymessages" action="" method="post"> 
 	 			<button type="submit" name="mymessages" value="ВыбратьМ">Мои сообщения</button> 
+				
 			</form> 
 		</div>
 		
@@ -292,7 +294,7 @@ if($_SESSION["bool"]===1)
 		  		  
 		</form>
 		
-		<!--<a  href="print_mes.php"><input type="button" value="Мои сообщения" name=buttonmess onClick="print_mes.php"></a>-->
+		<a  href="izbr.php"><input type="button" value="избранное" name=buttonmess onClick="izbr.php"></a>-->
  
 	</div>
 	
