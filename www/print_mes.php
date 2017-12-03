@@ -13,7 +13,7 @@
 		$result1= zapr("SELECT * FROM `messages` WHERE `u_to` ='$i' AND `u_from` ='$u_id'");
 	 while (($row1=$result1->fetch_assoc())!=false)
 	 {
-		 echo $row1["data"]." ". base64_decode($row1["message"])."<br>";
+		 echo $row1["data"]." ".encode($row1["message"],$u_id)."<br>";
 	 }
 	    
 	}

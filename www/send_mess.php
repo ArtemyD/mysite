@@ -1,13 +1,17 @@
 <?
 	session_start();
-	
+	/**
+	 * Принимаем постовые данные. Очистим сообщение от html тэгов
+	 * и приведем id получателя к типу integer
+	 */
+	 
 	$to=(int)$_SESSION["To"];
 	$from=$_SESSION["Id"];
 	
 	$message= htmlspecialchars($_POST['message']);
 	//require "encode.php";
 	//$message = encode($message, $from);
-	$message=base64_encode($message);
+	
 	  
 	  
 	 require "price_chat.php";
