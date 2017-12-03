@@ -244,7 +244,10 @@ if($_SESSION["bool"]===1)
 				
 			</form> 
 		</div>
+
+		<a  href="izbr.php"><button type="submit" id="fav"name=buttonmess onClick="izbr.php">Избранное</button></a>
 		
+
 		<div id ="credits_lettering">
 			<h5>Кредиты: <?echo $_SESSION["credits"];?>$</h5>
 		</div>
@@ -264,11 +267,11 @@ if($_SESSION["bool"]===1)
 	
 	<div>
 		<form name="Select" action="" method="post">
-		
-		 	<div id="block1">   
+			<!--<a  href="izbr.php"><input type="button" class="btn btn-info my-4 my-sm-0" value="Избранное" id="fav"name=buttonmess onClick="izbr.php"></a>-->
+			<div id="block1">   
 			 	<button id="photo1" type="submit" name="select1" value="<?=$user1["Id"];?>"> 
 			 		<img  src="<?=$user1["Photo"];?>" width="265" height="265"; alt="<?=$user1["Id"];?>"/> 
-			 	</button> 
+				</button> 
 			
 				<p id="info1"><? echo $user1[firstname]; ?></p>
 			
@@ -285,7 +288,7 @@ if($_SESSION["bool"]===1)
 			 		<img  src="<?=$user2["Photo"];?>"width="265" height="265"; alt="<?=$user2["Id"];?>"/>
 				</button> 
 
-			 	 <p id="info2"><?=$user2[firstname];?></p> 
+			 	<p id="info2"><?=$user2[firstname];?></p> 
 			  	<button class="btn btn-info btn-lg btn-block" name="message2" type="submit" value="<?=$user2["Id"];?>" <?=$key_mess2;?>> Сообщение  <?echo $price2?>$</button>
 			 
 			  	<button class="btn btn-info btn-lg btn-block" name="f2" type="submit" value="<?=$user2["Id"];?>" > добавить в избранное </button>
@@ -293,11 +296,8 @@ if($_SESSION["bool"]===1)
 			</div>
 		  		  
 		</form>
-		
-		<a  href="izbr.php"><input type="button" value="избранное" name=buttonmess onClick="izbr.php"></a>-->
  
 	</div>
-	
 	
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

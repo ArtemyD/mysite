@@ -39,7 +39,7 @@ header button
 {
 	margin-left: 10px;
 	margin-top: 2px;
-	 float:left;
+	float:left;
 }
 
 #MyMessages
@@ -49,25 +49,32 @@ header button
 	float:left;
 }
 
+#fav
+{
+	margin-left: 10px;
+	margin-top: 12px;
+	float:left;
+}
+
 #credits_lettering
 {
-	margin-left:500px;
-	margin-top:5px;
+	margin-left:450px;
+	margin-top:10px;
 	float: left;
 }
 
 .log_in-out
 {
-	margin-right:40px;
+	margin-right:20px;
 	margin-top:5px;
 	float:right;
 }
 
 #vk
 {  
-margin-right:20px;
-margin-top:5px;
-float:right;
+	margin-right:20px;
+	margin-top:5px;
+	float:right;
 }
 
 #log_out
@@ -87,9 +94,6 @@ float:right;
 	margin-top:5%;
 	float: left;
 }
-
-
-
 
 #block1
 {     
