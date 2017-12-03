@@ -19,13 +19,13 @@
 		$mysqli= new mysqli("localhost", "root", "", "polz");
 		$mysqli->query ("SET NAMES 'utf8'");
 			 
-		echo $to;echo"<br/>";
+		/*echo $to;echo"<br/>";
 		echo $from;echo"<br/>";
-		echo $message;echo"<br/>"; 
+		echo $message;echo"<br/>";*/
 			 
 		$result= $mysqli->query("INSERT INTO `messages` (`data`, `u_from`, `u_to`, `message`, `flag`) VALUES (CURRENT_TIMESTAMP, '$from', '$to', '$message', '0');");
 		$mysqli->close;
-		//header('location: /');
+		header('location: /');
 	}
 	else
 		echo "Ошибка! Необходимо авторизоватся, либо недостаточно кредитов:(";
