@@ -1,17 +1,13 @@
 <?
 	session_start();
 	/**
-	 * ÐŸÑ€Ð¸Ð½Ð¸Ð¼Ð°ÐµÐ¼ Ð¿Ð¾ÑÑ‚Ð¾Ð²Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ. ÐžÑ‡Ð¸ÑÑ‚Ð¸Ð¼ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ Ð¾Ñ‚ html Ñ‚ÑÐ³Ð¾Ð²
-	 * Ð¸ Ð¿Ñ€Ð¸Ð²ÐµÐ´ÐµÐ¼ id Ð¿Ð¾Ð»ÑƒÑ‡Ð°Ñ‚ÐµÐ»Ñ Ðº Ñ‚Ð¸Ð¿Ñƒ integer
+	 * Ïðèíèìàåì ïîñòîâûå äàííûå. Î÷èñòèì ñîîáùåíèå îò html òýãîâ
+	 * è ïðèâåäåì id ïîëó÷àòåëÿ ê òèïó integer
 	 */
-	 
-	$to=(int)$_SESSION["To"];
-	$from=$_SESSION["Id"];
-	
 	$message= htmlspecialchars($_POST['message']);
-	//require "encode.php";
-	//$message = encode($message, $from);
-	
+	$to=(int)$_SESSION["To"];
+
+	  $from=$_SESSION["Id"];
 	  
 	  
 	 require "price_chat.php";
@@ -20,18 +16,16 @@
 	require "buy_chat.php";
 	if(buy_chat($from, $price)==1)
 	{
-		$mysqli= new mysqli("localhost", "root", "", "polz");
-		$mysqli->query ("SET NAMES 'utf8'");
+		require "zapros.php";
 			 
-		echo $to;echo"<br/>";
-		echo $from;echo"<br/>";
-		echo $message;echo"<br/>"; 
+		//echo $to;echo"<br/>";
+		//echo $from;echo"<br/>";
+		//echo $message;echo"<br/>"; 
 			 
-		$result= $mysqli->query("INSERT INTO `messages` (`data`, `u_from`, `u_to`, `message`, `flag`) VALUES (CURRENT_TIMESTAMP, '$from', '$to', '$message', '0');");
-		$mysqli->close;
-		//header('location: /');
+		$result= zapr("INSERT INTO `messages` (`data`, `u_from`, `u_to`, `message`, `flag`) VALUES (CURRENT_TIMESTAMP, '$from', '$to', '$message', '0');");
+		header('location: /');
 	}
-	else
-		echo "ÐžÑˆÐ¸Ð±ÐºÐ°! ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð°Ð²Ñ‚Ð¾Ñ€Ð¸Ð·Ð¾Ð²Ð°Ñ‚ÑÑ, Ð»Ð¸Ð±Ð¾ Ð½ÐµÐ´Ð¾ÑÑ‚Ð°Ñ‚Ð¾Ñ‡Ð½Ð¾ ÐºÑ€ÐµÐ´Ð¸Ñ‚Ð¾Ð²:(";
+	
+	echo "Error! Not enough credits:(";
 	
 ?>

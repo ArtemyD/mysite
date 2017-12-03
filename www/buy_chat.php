@@ -3,8 +3,6 @@
 
 	function buy_chat($Id, $price)
 	{
-		if($Id===NULL||$price===NULL)
-			return 0;
 		if($price == 0)
 			return 1;
 		
