@@ -3,16 +3,15 @@
 
 	function price_chat($Id, $Id1)
 	{    
-	
-		if($Id==$Id1)
-			return 0;
+		if($Id===NULL||$Id1===NULL)
+			return NULL;
 		
 		 $mysqli= new mysqli("localhost", "root", "", "polz");
 		$mysqli->query ("SET NAMES 'utf8'");
 		
 		$chat1=$result=$mysqli->query("SELECT * FROM messages WHERE (u_from=$Id AND u_to=$Id1) OR (u_from=$Id1 AND u_to=$Id)");
 		$chat=$chat1->fetch_assoc();
-		if($chat["u_from"]==$Id||$chat["u_to"]==$Id)
+		if($chat["u_from"]==$Id||$chat["u_to"]==$Id||$Id==$Id1)
 		{
 			$mysqli->close();
 			return 0;
