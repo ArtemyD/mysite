@@ -4,8 +4,9 @@
 		$mysqli->query ("SET NAMES 'utf8'");
 		
 		$result=$mysqli->query($string);
-return $result;		
 		$mysqli->close;
+return $result;		
+		
 		
   
   }

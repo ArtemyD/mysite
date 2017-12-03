@@ -4,6 +4,7 @@
 	session_start();
 	$u_id=$_SESSION["Id"];
 	 require "zapros.php";
+	 require "encode.php";
 	
 	$result= zapr("SELECT * FROM `messages` WHERE `u_from` ='$u_id'");
 	
@@ -11,7 +12,9 @@
 	if(isset($_POST["$i"])){
 		$result1= zapr("SELECT * FROM `messages` WHERE `u_to` ='$i' AND `u_from` ='$u_id'");
 	 while (($row1=$result1->fetch_assoc())!=false)
-		echo $row1["data"]." ".$row1["message"]."<br>";
+	 {
+		 echo $row1["data"]." ".encode($row1["message"],$u_id)."<br>";
+	 }
 	    
 	}
 	}
