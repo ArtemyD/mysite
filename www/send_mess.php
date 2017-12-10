@@ -5,6 +5,7 @@
 	 * и приведем id получателя к типу integer
 	 */
 	$message= htmlspecialchars($_POST['message']);
+	$message=base64_encode($message);
 	$to=(int)$_SESSION["To"];
 
 	  $from=$_SESSION["Id"];
