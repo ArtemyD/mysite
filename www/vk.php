@@ -57,7 +57,6 @@ else
 	$_SESSION["credits"]=$user1["credits"];
 }
 
-
 $mysqli->close;
 //echo '<pre>';
 //echo $data["first_name"];

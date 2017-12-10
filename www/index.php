@@ -231,7 +231,7 @@ if($_SESSION["bool"]===1)
 
 		<div id="rating">
 	 		<form name="Select1" action="" method="post"> 
-	 			<button type="submit" name="select3" value="Выбрать2">Рейтинг
+	 			<button type="submit" style = "color:white;" name="select3" value="Выбрать2">Рейтинг
 		 			<!--<img  src="<?="tri.png";?>"width="40" height="27";/>-->
 		 		</button> 
 			</form> 
@@ -240,7 +240,7 @@ if($_SESSION["bool"]===1)
 		<div id="MyMessages">
 			<!--<a  href="print_mes.php">Мои сообщения</a>-->
 			<form name="mymessages" action="" method="post"> 
-	 			<button type="submit" name="mymessages" value="ВыбратьМ">Мои сообщения</button> 
+	 			<button style = "color:white;" type="submit" name="mymessages" value="ВыбратьМ">Мои сообщения</button> 
 				
 			</form> 
 		</div>
@@ -249,12 +249,12 @@ if($_SESSION["bool"]===1)
 		
 
 		<div id ="credits_lettering">
-			<h5>Кредиты: <?echo $_SESSION["credits"];?>$</h5>
+			<h6 style = "color:white;">Кредиты: <?echo $_SESSION["credits"];?>$</h6>
 		</div>
 
 		<div id="log_out" class="log_in-out">
 	  		<form name="exit" action="" method="post">
-				<button type="submit" name="exit" value="Выход">Выход</button>
+				<button type="submit" style = "color:white;" name="exit" value="Выход">Выход</button>
 	 	 	</form>
 		</div>
 

@@ -10,14 +10,15 @@ background-color: #eff4f9;
 }
 header 
 {   
-	border-top: 2px ridge #2d5782;
+	
+	
 	
 	background: #2d7f96;
 	width:100%;
 	margin:0px;
 	float:left;
 	height: 50px;
-	box-shadow: 0px 3px 20px 3px #595959; 
+	box-shadow: 0px 2px 20px 1px #595959; 
 	
 }
 
@@ -50,7 +51,7 @@ header button
 }
 
 #fav
-{
+{   color:white;
 	margin-left: 10px;
 	margin-top: 12px;
 	float:left;

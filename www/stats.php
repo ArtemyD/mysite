@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>SFUmash</title>
 
-<nav class="navbar navbar-expand-lg navbar-dark"style="background-color: #2d7f96;" >
+<nav class="navbar navbar-expand-lg navbar-dark"style="background-color: #2d7f96; height:50px" >
     <!-- Image and text -->
         <a class="navbar-brand" href="#">
-            <img src="logotext.png" width="145" height="31" class="d-inline-block align-top" alt="">
+            <img src="logotext.png" style="margin-bottom:0px;" width="289px" height="46px" class="d-inline-block align-top" alt="">
         </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
