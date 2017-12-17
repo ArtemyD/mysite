@@ -26,6 +26,36 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
+
+<nav class="navbar navbar-expand-lg navbar-dark"style="background-color: #2d7f96; height:50px" >
+    <!-- Image and text -->
+        <a class="navbar-brand" href="index.php"onClick="index.php">
+            <img src="logotext.png" style="margin-bottom:0px;" width="289px" height="46px" class="d-inline-block align-top" alt="">
+        </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="stats.php"onClick="stats.php">Рейтинг</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="print_mes.php"onClick="print_mes.php">Сообщения</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="izbr.php"onClick="izbr.php">Избранное</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
 <body>
  
 	<p>Сообщения </p>

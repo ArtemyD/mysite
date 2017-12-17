@@ -8,7 +8,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark"style="background-color: #2d7f96; height:50px" >
     <!-- Image and text -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php"onClick="index.php">
             <img src="logotext.png" style="margin-bottom:0px;" width="289px" height="46px" class="d-inline-block align-top" alt="">
         </a>
 
@@ -19,24 +19,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php"onClick="index.php">Home<span class="sr-only"></span></a>
+        <a class="nav-link" href="stats.php"onClick="stats.php">Рейтинг</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="print_mes.php"onClick="print_mes.php">Сообщения</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="izbr.php"onClick="izbr.php">Избранное</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

@@ -221,49 +221,55 @@ if($_SESSION["bool"]===1)
 <title>SFUmash</title>
 <link rel="stylesheet" type="text/css" href="style1.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
+
+<nav class="navbar navbar-expand-lg navbar-dark"style="background-color: #2d7f96; height:50px" >
+    <!-- Image and text -->
+        <a class="navbar-brand" href="index.php"onClick="index.php">
+            <img src="logotext.png" style="margin-bottom:0px;" width="289px" height="46px" class="d-inline-block align-top" alt="">
+        </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    	<li class="nav-item active">
+        	<a class="nav-link" href="stats.php"onClick="stats.php">Рейтинг</a>
+      	</li>
+      	<li class="nav-item active">
+     		<a class="nav-link" href="print_mes.php"onClick="print_mes.php">Сообщения</a>
+     	 </li>
+      	<li class="nav-item active">
+       	 	<a class="nav-link" href="izbr.php"onClick="izbr.php">Избранное</a>
+     	</li>
+	</ul>
+
+    <form class="form-inline my-2 my-lg-0">
+    	<div class="form-group">
+          <input type="text" readonly class="form-control-plaintext" id="credits" value="Кредиты: <?echo $_SESSION["credits"];?>$" style="color:white">
+        </div>
+ 	</form>
+    
+	<div id="vk" class "log_in-out"> 
+		<a href="https://oauth.vk.com/authorize?client_id=<?=ID?>&display=page&redirect_uri=<?=URL?>&response_type=code" target="_blank">
+		<img src="vk.png" height="50" width="60"/></a>
+	</div>
+
+	<div id="log_out" class="nav justify-content-end">
+		<form  class="nav-item" name="exit" action="" method="post">
+			<button class="btn btn-light" type="submit" style = "background-color: #2d7f96; color:white;" name="exit" value="Выход">Выход</button>
+	 	</form>
+	</div>
+    
+  </div>
+</nav>
+
 <body>
-    <header>
-		<div id="logtext"> <img id="logo" src="logotext.png" /> </div>
-
-		<div id="rating">
-	 		<form name="Select1" action="" method="post"> 
-	 			<button type="submit" style = "color:white;" name="select3" value="Выбрать2">Рейтинг
-		 			<!--<img  src="<?="tri.png";?>"width="40" height="27";/>-->
-		 		</button> 
-			</form> 
-		</div>
-
-		<div id="MyMessages">
-			<!--<a  href="print_mes.php">Мои сообщения</a>-->
-			<form name="mymessages" action="" method="post"> 
-	 			<button style = "color:white;" type="submit" name="mymessages" value="ВыбратьМ">Мои сообщения</button> 
-				
-			</form> 
-		</div>
-
-		<a  href="izbr.php"><button type="submit" id="fav"name=buttonmess onClick="izbr.php">Избранное</button></a>
-		
-
-		<div id ="credits_lettering">
-			<h6 style = "color:white;">Кредиты: <?echo $_SESSION["credits"];?>$</h6>
-		</div>
-
-		<div id="log_out" class="log_in-out">
-	  		<form name="exit" action="" method="post">
-				<button type="submit" style = "color:white;" name="exit" value="Выход">Выход</button>
-	 	 	</form>
-		</div>
-
-	  	<div id="vk" class "log_in-out"> 
-		  <a href="https://oauth.vk.com/authorize?client_id=<?=ID?>&display=page&redirect_uri=<?=URL?>&response_type=code" target="_blank">
-		  <img src="vk.png" height="50" width="60"/></a>
-		</div>
-
-	</header>
+    
 	
 	<div>
 		<form name="Select" action="" method="post">
