@@ -1,14 +1,12 @@
        <?php
   function zapr($string){	   
-		$mysqli= new mysqli("localhost", "root", "", "polz");
+		$mysqli= new mysqli("localhost", "u30867_pasha", "11223344Ar", "u30867_polz");
 		$mysqli->query ("SET NAMES 'utf8'");
 		
 		$result=$mysqli->query($string);
-return $result;		
 		$mysqli->close;
+return $result;		
+		
 		
   
   }
-    $mysqli= new mysqli("localhost", "root", "", "polz");
-		$mysqli->query ("SET NAMES 'utf8'");
-		?>
