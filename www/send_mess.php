@@ -1,4 +1,5 @@
 <?
+<<<<<<< HEAD
 	session_start();
 	/**
 	 * Принимаем постовые данные. Очистим сообщение от html тэгов
@@ -7,6 +8,23 @@
 	$message= htmlspecialchars($_POST['message']);
 	$message=base64_encode($message);
 	$to=(int)$_SESSION["To"];
+=======
+session_start();
+/**
+ * Принимаем постовые данные. Очистим сообщение от html тэгов
+ * и приведем id получателя к типу integer
+ */
+$message= htmlspecialchars($_POST['message']);
+$to=(int)$_SESSION["To"];
+
+  $from=$_SESSION["Id"];
+ require "zapros.php";
+ 
+$result= zapr("INSERT INTO `messages` (`data`, `u_from`, `u_to`, `message`, `flag`) VALUES (CURRENT_TIMESTAMP, '$from', '$to', '$message', '0');");
+echo $result;
+//header('location: /');
+
+>>>>>>> parent of e970249... РЇ РІ РґРµР»Рµ
 
 	  $from=$_SESSION["Id"];
 	  
